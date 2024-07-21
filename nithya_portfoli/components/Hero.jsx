@@ -4,7 +4,7 @@ import { Download, Send } from 'lucide-react';
 
 import {
     RiBriefcase4Fill,
-    RiTeamFill,
+    RiTeamFill, 
     RiTodoFill,
     RiArrowDownSLine,
 } from 'react-icons/ri';
@@ -44,9 +44,17 @@ const Hero = () => {
                  <Download size={18}/>
                   </Button>
               </div>
+              {/* Socials */}
+              <Socials 
+              containerStyles='flex gap-x-6 mx-auto xl:mx-0'
+              iconsStyles='text-foreground text-[22px] hover:text-primary
+              transition-all'/>
              </div>
               {/* image */}
-              <div className='hidden xl:flex relative'>image</div>   
+              <div className='hidden xl:flex relative'>
+                 <div className='bg-hero_shape2_light dark:bg-hero_shape2_dark w-[500px] h-[500px]
+                 bg-no-repeat'></div>
+                </div>   
             </div>
             {/* icon */}
             <div className='hidden md:flex absolute left-2/4 bottom-44 xl:bottom-12
