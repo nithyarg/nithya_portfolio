@@ -60,6 +60,7 @@ const Hero = () => {
                  <DevImg 
                  containerStyles='bg-hero_shape w-[510] h-[462px] bg-no-repeat
                  relative bg-bottom'
+                 imgSrc='/hero/developer.png'
                  />
                 </div>   
             </div>
