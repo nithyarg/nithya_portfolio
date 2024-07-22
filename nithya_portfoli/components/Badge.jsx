@@ -8,7 +8,7 @@ const Badge = ({
   endCountText,
   badgeText}) => {
   return (
-    <div className={`badge ${containerStyles}`}Badge></div>
+    <div className={`badge ${containerStyles}`}>Badge</div>
   );
 };
 
