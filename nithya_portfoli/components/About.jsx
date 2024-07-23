@@ -7,8 +7,7 @@ import{
     MailIcon,
     HomeIcon,
     PhoneCall,
-    GraduationCap,
-    Calender,
+    GraduationCap,Calendar,
     Briefcase,
     University,
 } from 'lucide-react';
@@ -27,7 +26,7 @@ const infoData =[
         text: 'youremail@email.com',
     },  
     {
-        icon: <Calender size={20} />,
+        icon: <Calendar size={20} />,
         text: 'Born on 10 Mar, 1998',
     },
     {
