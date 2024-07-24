@@ -65,18 +65,18 @@ const qualificationData = [
         title: 'experience',
         data: [
             {
-                university: 'ABC',
-                qualification: 'Software Engineer',
+                company: 'ABC',
+                role: 'Software Engineer',
                 years: '2018 - 2020',
             },
             {
-                university: 'XYZ Inc',
-                qualification: 'Softwarw Engineer',
+                company: 'XYZ Inc',
+                role: 'Softwarw Engineer',
                 years: '2020 - 2022',
             },
             {
-                university: 'Tech Innovators',
-                qualification: 'Lead Developer',
+                company: 'Tech Innovators',
+                role: 'Lead Developer',
                 years: '2022 - Present',
             },
         ],
@@ -162,19 +162,113 @@ const About = () => {
                                     user experiences.
                                 </p>
                                 {/* icons */}
-                                <div>
+                                <div className="grid xl:grid-cols-2 gap-4 mb-12">
                                     {infoData.map((item, index) => {
                                         return( 
-                                            <div key={index}>
-                                            <div>{item.icon}</div>
+                                            <div  
+                                            className ='flex items-center gap-x-4 mx-auto xl:mx-0'
+                                            key={index}>
+                                            <div className="text-primary">{item.icon}</div>
                                             <div>{item.text}</div>
                                         </div>
                                         );
                                     })}
                                 </div>
+                                {/* languages */}
+                                <div className="flex flex-col gap-y-2">
+                                    <div className="text-primary">Language Skill</div>
+                                    <div className="border-b border-border"></div>
+                                    <div>English, French, Spanish, Italian</div>
+                                </div>
                             </div>
                         </TabsContent>
-                        <TabsContent value='qualifications'>qualifications info</TabsContent>
+                        {/* qualifications */}
+                        <TabsContent value='qualifications'>
+                          <div>
+                            <h3 className="h3 mb-8 text-center xl:text-left">
+                                My Awesome Journey
+                                </h3>
+                                {/* experience & education wropper */}
+                                <div className="grid md:grid-cols-2 gap-y-8">
+                                    {/* experience */}
+                                    <div className="flex flex-col gap-y-6">
+                                     <div className="flex gap-x-4 items-center text-[22px] text-primary">
+                                        <Briefcase/>
+                                        <h4 className="capitalize font-medium">
+                                            {getData(qualificationData,'experience').title}
+                                        </h4>
+                                     </div>
+                                     {/* list */}
+                                     <div className="flex flex-col gap-y-8">
+                                        {getData(qualificationData,'experience').data.map(
+                                            (item,index)=> {
+                                                const {company, role, years} = item;
+                                                return (
+                                                    <div className="flex gap-x-8 group bg-yellow-100" 
+                                                    key={index}
+                                                    >
+                                                        <div className="h-[84px] w-[1px] bg-border relative ml-2">
+                                                            <div className="w-[11px] h-[11px] rounded-full bg-primary absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-500"></div>
+                                                        </div>
+                                                        <div>
+                                                            <div className="font-semibold text-xl leading-none mb-2">
+                                                                {company}
+                                                            </div>
+                                                            <div className="text-lg leading-none text-muted-foreground mb-4">
+                                                                {role}
+                                                            </div>
+                                                            <div className="text-base font-medium">
+                                                                {years}
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                );
+                                                }
+                                            )}
+                                     </div>
+                                    </div>
+                                    {/* education */}
+                                    <div>
+                                     <div className="flex gap-x-4 items-center text-[22px] text-primary">
+                                        <Briefcase/>
+                                        <h4 className="capitalize font-medium">
+                                            {getData(qualificationData,'education').title}
+                                        </h4>
+                                     </div>
+                                     {/* list */}
+                                     <div className="flex flex-col gap-y-8">
+                                        {getData(qualificationData,'experience').data.map(
+                                            (item,index)=> {
+                                                const {company, role, years} = item;
+                                                return (
+                                                    <div className="flex gap-x-8 group bg-yellow-100" 
+                                                    key={index}
+                                                    >
+                                                        <div className="h-[84px] w-[1px] bg-border relative ml-2">
+                                                            <div className="w-[11px] h-[11px] rounded-full bg-primary absolute -left-[5px] group-hover:translate-y-[84px] transition-all duration-500"></div>
+                                                        </div>
+                                                        <div>
+                                                            <div className="font-semibold text-xl leading-none mb-2">
+                                                                {company}
+                                                            </div>
+                                                            <div className="text-lg leading-none text-muted-foreground mb-4">
+                                                                {role}
+                                                            </div>
+                                                            <div className="text-base font-medium">
+                                                                {years}
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                );
+                                                }
+                                            )}
+                                     </div>
+                                    </div>
+                                </div>
+                          </div>                        
+                        </TabsContent>
                         <TabsContent value='skills'>skills info</TabsContent>
                     </div>
                 </Tabs>
