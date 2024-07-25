@@ -229,18 +229,18 @@ const About = () => {
                                      </div>
                                     </div>
                                     {/* education */}
-                                    <div>
+                                    <div className="flex flex-col gap-y-6" >
                                      <div className="flex gap-x-4 items-center text-[22px] text-primary">
-                                        <Briefcase/>
+                                        <GraduationCap size={28}/>
                                         <h4 className="capitalize font-medium">
                                             {getData(qualificationData,'education').title}
                                         </h4>
                                      </div>
                                      {/* list */}
                                      <div className="flex flex-col gap-y-8">
-                                        {getData(qualificationData,'experience').data.map(
+                                        {getData(qualificationData,'education').data.map(
                                             (item,index)=> {
-                                                const {company, role, years} = item;
+                                                const {university, qualification, years} = item;
                                                 return (
                                                     <div className="flex gap-x-8 group bg-yellow-100" 
                                                     key={index}
@@ -250,10 +250,10 @@ const About = () => {
                                                         </div>
                                                         <div>
                                                             <div className="font-semibold text-xl leading-none mb-2">
-                                                                {company}
+                                                                {university}
                                                             </div>
                                                             <div className="text-lg leading-none text-muted-foreground mb-4">
-                                                                {role}
+                                                                {qualification}
                                                             </div>
                                                             <div className="text-base font-medium">
                                                                 {years}
@@ -269,7 +269,10 @@ const About = () => {
                                 </div>
                           </div>                        
                         </TabsContent>
-                        <TabsContent value='skills'>skills info</TabsContent>
+                        {/* skills */}
+                        <TabsContent value='skills'>
+                            
+                        </TabsContent>
                     </div>
                 </Tabs>
             </div>
